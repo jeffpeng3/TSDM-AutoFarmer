@@ -24,7 +24,7 @@ def tsdm_check_in():
         "Cookie": COOKIE,
         "Referer": "https://www.tsdm39.com/forum.php",
         "Upgrade-Insecure-Requests": "1",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
     }
 
     with httpx.Client(headers=headers) as client:
@@ -58,7 +58,7 @@ def tsdm_check_in():
 def tsdm_work():
     log = ""
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36',
         'cookie': COOKIE,
         'connection': 'Keep-Alive',
         'x-requested-with': 'XMLHttpRequest',
@@ -104,7 +104,7 @@ def get_score():
             "Cookie": COOKIE,
             "Referer": "https://www.tsdm39.com/forum.php",
             "Upgrade-Insecure-Requests": "1",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
         }
         with httpx.Client(headers=headers) as client:
             response = client.get("https://www.tsdm39.com/home.php?mod=spacecp&ac=credit&showcredit=1")
