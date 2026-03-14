@@ -29,14 +29,14 @@ jobs:
         run: |
           if [[ "${{ github.event_name }}" == "schedule" ]]; then
             if [[ "${{ github.event.schedule }}" == "0 1 * * *" ]]; then
-              echo "Running daily check-in"
-              python tsdm.py checkin
+              echo "Running daily check-in" | tee $GITHUB_STEP_SUMMARY
+              python tsdm.py checkin | tee $GITHUB_STEP_SUMMARY
             elif [[ "${{ github.event.schedule }}" == "0 */3 * * *" ]]; then
-              echo "Running 6-hour work"
-              python tsdm.py work
+              echo "Running 6-hour work" | tee $GITHUB_STEP_SUMMARY
+              python tsdm.py work | tee $GITHUB_STEP_SUMMARY
             fi
           else
-            echo "Manual trigger - running both tasks"
-            python tsdm.py checkin
-            python tsdm.py work
+            echo "Manual trigger - running both tasks" | tee $GITHUB_STEP_SUMMARY
+            python tsdm.py checkin | tee $GITHUB_STEP_SUMMARY
+            python tsdm.py work | tee $GITHUB_STEP_SUMMARY
           fi
